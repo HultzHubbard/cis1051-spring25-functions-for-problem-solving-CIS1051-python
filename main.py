@@ -43,10 +43,9 @@ def time():
 
     # Calculations
     hours = int(RawSeconds / 3600)
-    minutes = int(((RawSeconds / 3600) * 1000) / 60)
-    seconds = int(((((RawSeconds / 3600) * 1000) / 60) % 1) * 100)
+    minutes = int(((RawSeconds / 3600) % 1) * 60)
+    seconds = int(((((RawSeconds / 3600) % 1) * 60) % 1) * 60)
 
-    # Final print statement
-    print(str(RawSeconds) + " in hours, minutes, and seconds is: " + str(hours) + " hours, " + str(minutes) + " minutes, and " + str(seconds) + " seconds.\n")
+    print(f"{RawSeconds} seconds is {hours} hours, {minutes} minutes, and {seconds} seconds.")
 
 time()
